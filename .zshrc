@@ -113,19 +113,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 #alias zshconfig="nano ~/.zshrc"
 
-# set Jellyfin Web Dir for C# development
-export JELLYFIN_WEB_DIR=~/Dev/jf/jellyfin-web/dist
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# CESP Kurs .zshrc
-source ~/Dev/cesp/setup.zshrc
-
-list_xcode_provisioning_profiles() {
-    while IFS= read -rd '' f; do
-        2> /dev/null /usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' /dev/stdin \
-            <<< $(security cms -D -i "$f")
-
-    done < <(find "$HOME/Library/MobileDevice/Provisioning Profiles" -name '*.mobileprovision' -print0)
-}
+# local file
+if [[ -f .zshrc.local ]]; then
+    source .zshrc.local
+fi
