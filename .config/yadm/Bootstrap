@@ -1,0 +1,42 @@
+#!/bin/sh
+
+system_type=$(uname -s)
+
+#### MACOS
+if [ "$system_type" = "Darwin" ]; then
+
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+
+fi
+
+#### Debain Linux based
+if [ -f "/etc/debian_version" ]; then
+  # install zsh
+  echo "Installing ZSH"
+  sudo apt-get install -y zsh
+fi
+
+# install oh my zsh
+echo "Installing Oh-My-Zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# install powerlevel10k
+echo "Installing Powerlevel10k"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# install autocomplete
+echo "Installing Autosuggestions"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# reset yadm to head
+echo "Reset to master"
+yadm reset --hard origin/master
