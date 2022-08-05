@@ -39,4 +39,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # reset yadm to head
 echo "Reset to master"
-yadm reset --hard origin/master
+yadm reset --hard origin/main
