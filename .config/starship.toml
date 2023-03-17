@@ -17,9 +17,9 @@ $nodejs\
 $nim\
 $rust\
 $scala\
-[](fg:#86BBD8 bg:#06969A)\
-$docker_context\
-[](fg:#06969A bg:#33658A)\
+$conda\
+[](fg:#86BBD8 bg:#33658A)\
+$time\
 [ ](fg:#33658A)\
 """
 
@@ -42,8 +42,15 @@ disabled = false
 # represents the current operating system
 [os]
 style = "bg:#9A348E"
-disabled = false                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        # Disabled by default
-symbols = { Arch = "🎗️ ", CentOS = "💠 ", Debian = "🌀 ", DragonFly = "🐉 ", Emscripten = "🔗 ", EndeavourOS = "🚀 ", Fedora = "🎩 ", FreeBSD = "😈 ", Garuda = "🦅 ", Gentoo = "🗜️ ", HardenedBSD = "🛡️ ", Illumos = "🐦 ", Linux = "🐧 ", Macos = "\ue711 ", Manjaro = "🥭 ", Mariner = "🌊 ", MidnightBSD = "🌘 ", Mint = "🌿 ", NetBSD = "🚩 ", NixOS = "❄️ ", OpenBSD = "🐡 ", OpenCloudOS = "☁️ ", OracleLinux = "🦴 ", Pop = "🍭 ", Raspbian = "🍓 ", RedHatEnterprise = "🎩 ", Redhat = "🎩 ", Redox = "🧪 ", SUSE = "🦎 ", Solus = "⛵ ", Ubuntu = "\uebc9 ", Unknown = "❓ ", Windows = "\ue62a ", openEuler = "🦉 ", openSUSE = "🦎 " }
+disabled = false
+[os.symbols]
+Debian = "󰣚 "
+Linux = "🐧 "
+Macos = "\ue711 "
+Raspbian = "🍓 "
+Ubuntu = "\uebc9 "
+Unknown = "❓ "
+Windows = "\ue62a "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   # Disabled by default
 
 [directory]
 style = "bg:#DA627D"
@@ -56,6 +63,11 @@ truncate_to_repo = true
 symbol = " "
 style = "bg:#86BBD8"
 format = '[ $symbol ($version) ]($style)'
+
+[conda]
+symbol = "🅒 "
+style = "bg:#86BBD8"
+format = "[ $symbol $environment ]($style)"
 
 [docker_context]
 symbol = " "
@@ -99,7 +111,7 @@ format = '[ $symbol ($version) ]($style)'
 disabled = false
 time_format = "%R"             # Hour:Minute Format
 style = "bg:#33658A"
-format = '[ $time ]($style)'
+format = '[  $time ]($style)'
 
 [status]
 disabled = false
