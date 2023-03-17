@@ -25,18 +25,20 @@ if [ -f "/etc/debian_version" ]; then
   sudo apt-get install -y zsh
 fi
 
+# change shell to zsh
+chsh -s $(which zsh)
+
 # install oh my zsh
 echo "Installing Oh-My-Zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-
-# install powerlevel10k
-echo "Installing Powerlevel10k"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # install autocomplete
 echo "Installing Autosuggestions"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# reset yadm to head
+# installing starship theme
+curl -sS https://starship.rs/install.sh | sh
+
+# reset yadm to head to remove all config files which were newly installed
 echo "Reset to master"
 yadm reset --hard origin/main
