@@ -64,6 +64,11 @@
 	# https://help.github.com/articles/signing-commits-using-gpg/
 	gpgsign = true
 
+[pull]
+
+	# Use fast forward by default. https://stackoverflow.com/questions/71768999/how-to-merge-when-you-get-error-hint-you-have-divergent-branches-and-need-to-s/71774640#71774640
+	ff = only
+
 [diff]
 
 	# Detect copies as well as renames.
