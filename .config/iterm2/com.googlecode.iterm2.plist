@@ -2,8 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AutoCommandHistory</key>
 	<false/>
+	<key>Command</key>
+	<string>/bin/bash</string>
+	<key>Coprocess MRU</key>
+	<array>
+		<string>tre</string>
+	</array>
 	<key>CopySelection</key>
 	<false/>
 	<key>Custom Color Presets</key>
@@ -352,6 +360,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>4BC445D6-A39D-43D2-BF7B-7FF84F387C90</string>
+	<key>Default Toolbelt Width</key>
+	<real>103</real>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -688,7 +698,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>No</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1306,6 +1316,12 @@
 	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>ToolbeltTools</key>
+	<array>
+		<string>Profiles</string>
+		<string>Notes</string>
+		<string>Recent Directories</string>
+	</array>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>findMode_iTerm</key>
