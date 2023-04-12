@@ -25,6 +25,7 @@ $time\
 
 right_format = """
 $hostname
+$cmd_duration
 $status
 """
 
@@ -126,3 +127,7 @@ trim_at = '.fritz.box'
 style = 'bold green'
 symbol = '👩‍💻 '
 disabled = false
+
+[cmd_duration]
+min_time = 2_000
+style = 'bold bright-purple'
