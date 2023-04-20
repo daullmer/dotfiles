@@ -137,7 +137,7 @@
 [init]
 
 	defaultBranch = main
-[user]
-	name = David Ullmer
-	email = davidullmer@outlook.de
-	signingkey = E3070F07CBF3B4961667BFDE4AEABE3359D5883C
+
+[include]
+
+	path = .gitconfig.local
