@@ -3,13 +3,11 @@
 format = """
 [](#9A348E)\
 $os\
-$username\
-[](bg:#DA627D fg:#9A348E)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](fg:#9A348E bg:#DA627D)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
+[](fg:#DA627D bg:#86BBD8)\
 $c\
 $gradle\
 $java\
@@ -19,7 +17,6 @@ $rust\
 $scala\
 $conda\
 [](fg:#86BBD8 bg:#33658A)\
-$time\
 [ ](fg:#33658A)\
 """
 
@@ -54,9 +51,9 @@ Unknown = "❓ "
 Windows = "\ue62a "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   # Disabled by default
 
 [directory]
-style = "bg:#DA627D"
+style = "bg:#9A348E"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 2
 truncation_symbol = "…/"
 truncate_to_repo = true
 
@@ -77,11 +74,13 @@ format = '[ $symbol $context ]($style) $path'
 
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D"
+style = "bg:#DA627D"
 format = '[ $symbol $branch ]($style)'
+truncation_length = 17
+truncation_symbol = "…"
 
 [git_status]
-style = "bg:#FCA17D"
+style = "bg:#DA627D"
 format = '[$all_status$ahead_behind ]($style)'
 
 [gradle]
@@ -129,5 +128,6 @@ symbol = '👩‍💻 '
 disabled = false
 
 [cmd_duration]
-min_time = 2_000
+min_time = 5_000
 style = 'bold bright-purple'
+format =" [$duration]($style) "
