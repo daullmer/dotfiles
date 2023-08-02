@@ -9,11 +9,6 @@ vscode
 docker
 zsh-autosuggestions)
 
-# disable zsh auto update
-DISABLE_AUTO_UPDATE="true"
-
-source ${HOME}/.oh-my-zsh/oh-my-zsh.sh
-
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -21,6 +16,11 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# disable zsh auto update
+DISABLE_AUTO_UPDATE="true"
+
+source ${HOME}/.oh-my-zsh/oh-my-zsh.sh
 
 # Add tab completion for `defaults read|write NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
