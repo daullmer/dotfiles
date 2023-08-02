@@ -9,6 +9,9 @@ vscode
 docker
 zsh-autosuggestions)
 
+# disable zsh auto update
+DISABLE_AUTO_UPDATE="true"
+
 source ${HOME}/.oh-my-zsh/oh-my-zsh.sh
 
 # Load the shell dotfiles, and then some:
