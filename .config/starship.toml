@@ -2,7 +2,6 @@
 
 format = """
 [](#9A348E)\
-$os\
 $directory\
 [](fg:#9A348E bg:#DA627D)\
 $git_branch\
@@ -76,7 +75,7 @@ format = '[ $symbol $context ]($style) $path'
 symbol = ""
 style = "bg:#DA627D"
 format = '[ $symbol $branch ]($style)'
-truncation_length = 17
+truncation_length = 20
 truncation_symbol = "…"
 
 [git_status]

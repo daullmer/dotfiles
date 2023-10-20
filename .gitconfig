@@ -114,6 +114,11 @@
 	# automatically set the upstream branch
 	autoSetupRemote = true
 
+[fetch]
+
+	# automatically prune deleted remote branches
+	prune = true
+
 # URL shorthands
 
 [url "git@github.com:"]
@@ -143,6 +148,9 @@
 [include]
 
 	path = .gitconfig.local
+
 [pager]
 
+	# disable fullscreen pager for branch and stash list
 	branch = false
+	stash = false
