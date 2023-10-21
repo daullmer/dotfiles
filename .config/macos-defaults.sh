@@ -221,6 +221,14 @@ defaults write com.apple.dock showhidden -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
+# Flash clock time separators in menu bar
+defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true"
+
+# Correct clock format
+defaults write com.apple.menuextra.clock.plist ShowDate -int 1
+defaults write com.apple.menuextra.clock.plist ShowDayOfWeek -bool true
+defaults write com.apple.menuextra.clock.plist ShowSeconds -bool true
+
 ###############################################################################
 # iTerm 2                                                                     #
 ###############################################################################
@@ -283,6 +291,7 @@ for app in "Activity Monitor" \
 	"SystemUIServer" \
 	"Terminal" \
 	"Transmission" \
+	"ControlCenter" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done
